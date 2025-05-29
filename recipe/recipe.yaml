@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: azure-synapse-accesscontrol
-  version: 0.7.0
+  version: 0.5.0
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/azure-synapse-accesscontrol-${{ version }}.zip
-  sha256: 565aa26336d560c028775e8ae50d0691aa7089e96170e78342371b773da3137c
+  sha256: 835e324a2072a8f824246447f049c84493bd43a1f6bac4b914e78c090894bb04
 
 build:
   number: 0
@@ -24,9 +24,9 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
+    - azure-common >=1.1,<2.0
+    - azure-core >=1.6.0,<2.0
     - msrest >=0.5.0
-    - azure-common >=1.1,<2.dev0
-    - azure-core >=1.6.0,<2.0.0
 
 tests:
   - python:
